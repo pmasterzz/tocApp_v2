@@ -41,6 +41,8 @@ export class LoginPage implements OnInit {
       this.local.set('apphash', data.apphash);
       this.local.set('id', data.id);
       this._nav.push(HomePage);
+      this._nav.setRoot(HomePage);
+      this._nav.popToRoot();
     })
   }
 }

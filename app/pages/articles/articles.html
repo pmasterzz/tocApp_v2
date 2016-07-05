@@ -10,10 +10,10 @@
 
 <ion-content padding class="articles">
   <ion-list>
-    <ion-item>
-{{url}}    </ion-item>
-    <!--<ion-item *ngFor="let article of articles">
-      {{article.kop}}
-    </ion-item>-->
+    <ion-item text-wrap *ngFor="let article of articles.artikelen" (click)="launch(article.link)">
+      <h2>{{article.kop}}</h2>
+
+      <ion-note item-right>{{article.datum}}</ion-note>
+    </ion-item>
   </ion-list>
 </ion-content>

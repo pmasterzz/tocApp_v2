@@ -22,17 +22,15 @@ export class Article {
       .map(res => res.json());
   }
 
-  getAllArticles(url){
-    // https://www.my-toc.com/appservice/appGetRSSregels.php?profielID=6296&bronID=1627&url=http://feeds.bmj.com/bmj/recent/&code=bEEUd5jETvZVs9yi0vBcFDA8KJR7juiG
-    // let url2 = url.split('&');
-    // url2[1] += '&code=' + localStorage.getItem('apphash');
-    // url2 = url2.join('&');
-    // console.log(url2);
-    return this._http.get(url + '&code=' + localStorage.getItem('apphash'))
-    .map(res => {
-      console.log(res.json());
-      res.json();
-    });
+  getAllArticles(bronId){
+    let url = "https://www.my-toc.com/appservice/appGetRSSArtikelen.php?profielID=" + localStorage.getItem('id')  +"&bronID=" + bronId + "&code=" + localStorage.getItem('apphash');
+    //  let url2 = url.split('&');
+    //  url2[2] = 'code=' + localStorage.getItem('apphash');
+    //  url2 = url2.join('&');
+    return this._http.get(url)
+    .map(res => 
+      res.json()
+    );
   }
 }
 

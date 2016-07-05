@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   }
 
   titles;
-  local: Storage = new Storage(LocalStorage)
+  local: Storage = new Storage(LocalStorage);
 
   ngOnInit() {
     this._article.getAllTitles().subscribe(data => {
@@ -25,8 +25,8 @@ export class HomePage implements OnInit {
     })
   }
 
-  getAllArticles(url) {
-    this._nav.push(ArticlesPage, { url: url });
+  getAllArticles(titelID) {
+    this._nav.push(ArticlesPage, { titelID: titelID });
   }
 
   logout() {
